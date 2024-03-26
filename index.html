@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: digitalfont;
+            src: url(./DS-DIGIB.TTF);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #77796D;
+            display: flex;
+            align-items: center;
+            color: #44453E;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 5rem;
+            font-family: digitalfont;
+
+            
+        }
+        .row{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px; 
+        }
+        .row button{
+            font-size: 1.2rem; 
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="box" class="box"></div>
+        <div class="row">
+            <button id="minus">-</button>
+            <button id="reset">reset</button>
+            <button id="plus">+</button>
+        </div>
+    </div>
+    <script>
+    let box=document.querySelector("#box")
+    let minus=document.querySelector("#minus")
+    let reset=document.querySelector("#reset")
+    let plus=document.querySelector("#plus")
+    let number=0;
+    box.innerHTML=number
+    plus.addEventListener("click",()=>{
+        number++
+        box.innerHTML=number
+    })
+    minus.addEventListener("click",()=>{
+        if (number>0) {
+            number--
+        box.innerHTML=number
+        }
+    })
+    reset.addEventListener("click",()=>{
+        number=0
+        box.innerHTML=number
+    })
+    </script>
+</body>
+</html>
